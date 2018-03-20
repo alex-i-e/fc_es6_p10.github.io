@@ -1,0 +1,14 @@
+<main>
+    <h1 class="title">Hello from Angular !</h1>
+
+    <!-- Images (and assets) are parsed and loaded from within the public directory -->
+    <img src="/img/logo.png">
+
+    <ul ng-repeat="task in app.tasks">
+        <li>
+            <input type="checkbox" ng-click="removeTask($index)"/> {{ task }}
+        </li>
+    </ul>
+</main>
+<footer>
+</footer>
