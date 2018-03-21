@@ -1,0 +1,18 @@
+<form name="myForm"
+      ng-submit="$ctrl.onSubmit($event)">
+    <label>
+        Expired Date:
+        <input type="date"
+               name="expiredDate"
+               ng-model="$ctrl.expiredDate"
+               required>
+    </label>
+    <div role="alert">
+        <span class="error"
+              ng-show="myForm.expiredDate.$error.required">
+        Date is required!
+        </span>
+    </div>
+
+    <button class="btn" type="submit">Submit</button>
+</form>

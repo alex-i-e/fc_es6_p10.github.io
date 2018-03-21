@@ -2,13 +2,31 @@
     <h1 class="title">Hello from Angular !</h1>
 
     <!-- Images (and assets) are parsed and loaded from within the public directory -->
-    <img src="/img/logo.png">
+    <img class='logo' src="/img/logo.png">
 
-    <ul ng-repeat="task in app.tasks">
+    <!--({value: value})-->
+    <form-app callbackOnSubmit="this.onFormSubmit(value)"
+              tasks="$ctrl.tasks"></form-app>
+
+    <ul ng-repeat="task in $ctrl.tasks | checkedFilter:false">
         <li>
-            <input type="checkbox" ng-click="removeTask($index)"/> {{ task }}
+
+            <!--task.checked = true-->
+            <!--ng-click="$ctrl.removeTask($index)"-->
+            <input type="checkbox"
+                   ng-click="$ctrl.removeTask($event, $index, 'Process')"/> {{ task.description }} / {{ task.expiredDate
+            }}
         </li>
     </ul>
+    <div>Completed Lists:</div>
+    <ul ng-repeat="task in $ctrl.tasks | checkedFilter:true">
+        <li>
+            <input type="checkbox"
+                   ng-click="$ctrl.removeTask($event, $index, 'Done')"/> {{ task.description }} / {{ task.expiredDate }}
+        </li>
+    </ul>
+
+
 </main>
 <footer>
 </footer>

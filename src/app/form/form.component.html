@@ -1,0 +1,35 @@
+<form name="myForm" ng-submit="$ctrl.onSubmit($event)">
+    <label>
+        Description:
+        <input type="text"
+               name="description"
+               ng-model="$ctrl.description"
+               ng-minlength="20"
+               required>
+    </label>
+    <div role="alert">
+        <span class="error"
+              ng-show="myForm.description.$error.minlength">
+        Description is too short!
+        </span>
+        <span class="error"
+              ng-show="myForm.description.$error.required">
+        Description is required!
+        </span>
+    </div>
+    <label>
+        Expired Date:
+        <input type="date"
+               name="expiredDate"
+               ng-model="$ctrl.expiredDate"
+               required>
+    </label>
+    <div role="alert">
+        <span class="error"
+              ng-show="myForm.expiredDate.$error.required">
+        Date is required!
+        </span>
+    </div>
+
+    <button class="btn" type="submit">Submit</button>
+</form>
