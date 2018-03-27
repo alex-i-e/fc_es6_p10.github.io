@@ -66,9 +66,16 @@ export class AppController {
     e && e.stopPropagation();
     e && e.preventDefault();
 
+    console.log(`type=${type}, index=${index}`);
+
+
+    console.log('task' + type);
+    console.log('this[\'task\' + type]=', this['task' + type]);
+    console.log('this[\'task\' + type][index]=', this['task' + type][index]);
+
     this.$scope.$applyAsync(() => {
       this.tasks[index].checked = !this.tasks[index].checked;
-      
+
       const opposite = type === 'Process'
         ? 'Done'
         : 'Process';
@@ -80,8 +87,9 @@ export class AppController {
 
       this['task' + opposite].push(task);
 
-      console.log('direct=', this['task' + type]);
-      console.log('opposite=', this['task' + opposite]);
+      console.log('task=', task);
+      console.log(type + '=', this['task' + type]);
+      console.log(opposite + '=', this['task' + opposite]);
 
     });
   }

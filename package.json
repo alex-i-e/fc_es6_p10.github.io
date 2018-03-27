@@ -1,7 +1,7 @@
 {
-  "name": "fc_es6_p9",
+  "name": "fc_es6_p10",
   "version": "0.0.1",
-  "description": "fc_es6_p9",
+  "description": "fc_es6_p10",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alex-i-e/fc_es6_p9.github.io.git"
+    "url": "git+https://github.com/alex-i-e/fc_es6_p10.github.io.git"
   },
   "author": "Aleksandr Eremin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alex-i-e/fc_es6_p9.github.io/issues"
+    "url": "https://github.com/alex-i-e/fc_es6_p10.github.io/issues"
   },
-  "homepage": "https://github.com/alex-i-e/fc_es6_p9.github.io#readme",
+  "homepage": "https://github.com/alex-i-e/fc_es6_p10.github.io#readme",
   "dependencies": {
     "angular": "^1.5.0"
   },

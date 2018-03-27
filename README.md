@@ -1,4 +1,4 @@
-# fc_es6_p9.github.io
+# fc_es6_p10.github.io
 AngularJS - Frame
 
 app based on https://github.com/preboot/angularjs-webpack.git
