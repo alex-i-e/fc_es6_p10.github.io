@@ -1,7 +1,7 @@
 import angular from 'angular';
 import APP_MODULE_NAME from '../app.module';
 
-export class FormController {
+export class EditController {
 
   constructor() {
 
@@ -51,9 +51,10 @@ export class FormController {
   }
 }
 
-angular.module(APP_MODULE_NAME).component('formApp', {
-  template: require('./form.component.html'),
-  controller: FormController,
+
+angular.module(APP_MODULE_NAME).component('editApp', {
+  template: require('./edit.component.html'),
+  controller: EditController,
   bindings: {
     callbackOnSubmit: '&',
     articles: '=',

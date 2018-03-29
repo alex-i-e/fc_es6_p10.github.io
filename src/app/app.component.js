@@ -15,51 +15,46 @@ export class AppController {
   }
 
   $onInit() {
-    this.$http.get("./source/tasks.json").then(data => {
-      console.log('data=', data);
-    });
 
-
-    this.tasks = [ // TODO : throught the service
+    this.articles = [
       {
-        description: 'Task #44',
-        expiredDate: new Date(2018, 1, 30).toLocaleDateString('en-EN'),
-        checked: false,
+        title: 'Title #1',
+        desc: 'Something good happened yesterday',
+        author: 'A.O.',
+        date: new Date(2018, 5, 25).toLocaleDateString(),
       },
       {
-        description: 'Task #456',
-        expiredDate: new Date(2018, 2, 28).toLocaleDateString('en-EN'),
-        checked: false,
+        title: 'Title #2',
+        desc: 'All actions happened yesterday',
+        author: 'A.O.',
+        date: new Date(2018, 9, 20).toLocaleDateString(),
+      }, {
+        title: 'Title #3',
+        desc: 'But the good act happened yesterday',
+        author: 'A.O.',
+        date: new Date(2018, 10, 15).toLocaleDateString(),
       },
       {
-        description: 'Task #123',
-        expiredDate: new Date(2018, 3, 25).toLocaleDateString('en-EN'),
-        checked: false,
+        title: 'Title #4',
+        desc: 'The best solution happened yesterday',
+        author: 'A.O.',
+        date: new Date(2018, 8, 12).toLocaleDateString(),
       },
     ];
 
-    this.taskProcess = [ // TODO : throught the service
-      {
-        description: 'Task #44',
-        expiredDate: new Date(2018, 1, 30).toLocaleDateString('en-EN'),
-        checked: false,
-      },
-      {
-        description: 'Task #456',
-        expiredDate: new Date(2018, 2, 28).toLocaleDateString('en-EN'),
-        checked: false,
-      },
-      {
-        description: 'Task #123',
-        expiredDate: new Date(2018, 3, 25).toLocaleDateString('en-EN'),
-        checked: false,
-      },
-    ];
-    this.taskDone = [];
+    this.article = {};
   }
 
   $onChanges(changesObj) {
 
+  }
+
+  openArticle(e, index, article) {
+    console.log('e=', e);
+    console.log('index=', index);
+    console.log('article=', article);
+
+    this.article = article;
   }
 
   removeTask(e, index, type) {

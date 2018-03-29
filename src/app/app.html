@@ -4,27 +4,18 @@
     <!-- Images (and assets) are parsed and loaded from within the public directory -->
     <img class='logo' src="/img/logo.png">
 
-    <!--({value: value})-->
     <form-app callbackOnSubmit="this.onFormSubmit(value)"
-              tasks="$ctrl.tasks"></form-app>
+              articles="$ctrl.articles"
+              article="$ctrl.article"></form-app>
 
-    <ul ng-repeat="task in $ctrl.tasks | checkedFilter:false">
-        <li>
-
-            <!--task.checked = true-->
-            <!--ng-click="$ctrl.removeTask($index)"-->
-            <input type="checkbox"
-                   ng-click="$ctrl.removeTask($event, $index, 'Process')"/> {{ task.description }} / {{ task.expiredDate
-            }}
+    <ul class="article" ng-repeat="article in $ctrl.articles  track by $index">
+        <li ng-click="$ctrl.openArticle($event, $index, article)">
+            <div ng-click="">
+                {{ ($index + 1) + ') ' + article.title }} / {{ article.date }}
+            </div>
         </li>
     </ul>
-    <div>Completed Lists:</div>
-    <ul ng-repeat="task in $ctrl.tasks | checkedFilter:true">
-        <li>
-            <input type="checkbox"
-                   ng-click="$ctrl.removeTask($event, $index, 'Done')"/> {{ task.description }} / {{ task.expiredDate }}
-        </li>
-    </ul>
+    <div>Number of articles: {{$ctrl.articles.length}}</div>
 
 
 </main>
